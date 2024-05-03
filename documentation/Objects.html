@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Apex Documentation</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          Apex Documentation
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Powered by <a target="_blank" rel="noopener noreferrer" href="https://github.com/no-stack-dub-sack/apexdox-vs-code">ApexDox VS Code</a>
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="Miscellaneous" class="group-name">
+            <summary id="header-Miscellaneous" class="nav-header">
+              <span>Miscellaneous</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="Objects" id="item-Objects" class="nav-item class public" onclick="goToLocation('Objects.html');">
+                <a tabindex="1" href="javascript:void(0)">Objects</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public">
+            public
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected">
+            protected
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private">
+            private
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-testmethod" onclick="toggleScope('testmethod', this.checked);" />
+          <label for="cbx-testmethod">
+            testMethod
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-webservice" onclick="toggleScope('webservice', this.checked);" />
+          <label for="cbx-webservice">
+            webService
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="Objects">
+              <span>Objects</span>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                public inherited sharing class Objects
+              </div>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">Objects Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEquals">
+                      requireEquals (entry, comparable)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry object is null or not equal to the comparable object and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEquals_1">
+                      requireEquals (entry, comparable, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry object is null or not equal to the comparable object and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType">
+                      requireEqualsType (entry, comparable)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry object is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType_1">
+                      requireEqualsType (entry, comparable, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry object is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType_2">
+                      requireEqualsType (entry, comparable)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry ID is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType_3">
+                      requireEqualsType (entry, comparable, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided entry ID&#39;s SObjectType is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType_4">
+                      requireEqualsType (entry, comparable)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireEqualsType_5">
+                      requireEqualsType (entry, comparable, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireInstanceOf">
+                      requireInstanceOf (entry, type)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided object is null or not an instance of the specified type and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireInstanceOf_1">
+                      requireInstanceOf (entry, type, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided object is null or not an instance of the specified type and throws an IllegalArgumentException if either condition is true.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireNonEmptyCollection">
+                      requireNonEmptyCollection (entry)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided collection is null or empty and throws an IllegalArgumentException if it is. If no custom message is provided, a default message is used.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireNonEmptyCollection_1">
+                      requireNonEmptyCollection (entry, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided collection is null or empty and throws an IllegalArgumentException if it is.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireNonNull">
+                      requireNonNull (obj)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided object is null and throws an IllegalArgumentException if it is.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#Objects.requireNonNull_1">
+                      requireNonNull (obj, message)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Checks if the provided object is null and throws an IllegalArgumentException if it is.
+                    </div>
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEquals">
+                    <span>requireEquals(entry, comparable)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry object is null or not equal to the comparable object and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEquals(Object entry, Object comparable)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">the object to compare with the entry object</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided entry object is null or not equal to the comparable object
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEquals_1">
+                    <span>requireEquals(entry, comparable, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry object is null or not equal to the comparable object and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEquals( Object entry, Object comparable, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Object</code>
+                  </div>
+                  <div class="param-description">the object to compare with the entry object</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the entry object is null or not equal to the comparable object. If this is null, a default message is used.</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided entry object is null or not equal to the comparable object
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType">
+                    <span>requireEqualsType(entry, comparable)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry object is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( SObject entry, Schema.SObjectType comparable )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    SObject</code>
+                  </div>
+                  <div class="param-description">the SObject to check for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the entry object</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided entry object is null or not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType_1">
+                    <span>requireEqualsType(entry, comparable, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry object is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( SObject entry, Schema.SObjectType comparable, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    SObject</code>
+                  </div>
+                  <div class="param-description">the SObject to check for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the entry object</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the entry object is null or not equal to the comparable SObjectType. If this is null, a default message is used.</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided entry object is null or not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType_2">
+                    <span>requireEqualsType(entry, comparable)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry ID is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( Id entry, Schema.SObjectType comparable )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    Id</code>
+                  </div>
+                  <div class="param-description">the ID to check for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the entry ID</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided entry ID is null or not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType_3">
+                    <span>requireEqualsType(entry, comparable, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided entry ID&#39;s SObjectType is null or not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( Id entry, Schema.SObjectType comparable, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    Id</code>
+                  </div>
+                  <div class="param-description">the ID whose SObjectType is to be checked for nullity and equality</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the SObjectType of the entry ID</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the SObjectType of the entry ID is null or not equal to the comparable SObjectType</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the SObjectType of the provided entry ID is null or not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType_4">
+                    <span>requireEqualsType(entry, comparable)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( List&lt;SObject&gt; entry, Schema.SObjectType comparable )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    List&lt;SObject&gt;</code>
+                  </div>
+                  <div class="param-description">the list of SObjects to check for nullity and equality of SObjectType</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the SObjectType of the entry SObjects</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireEqualsType_5">
+                    <span>requireEqualsType(entry, comparable, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireEqualsType( List&lt;SObject&gt; entry, Schema.SObjectType comparable, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    List&lt;SObject&gt;</code>
+                  </div>
+                  <div class="param-description">the list of SObjects to check for nullity and equality of SObjectType</div>
+                  <div class="param-name">comparable</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   Schema.SObjectType</code>
+                  </div>
+                  <div class="param-description">the SObjectType to compare with the SObjectType of the entry SObjects</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided list of SObjects is null or if their SObjectType is not equal to the comparable SObjectType
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireInstanceOf">
+                    <span>requireInstanceOf(entry, type)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided object is null or not an instance of the specified type and throws an IllegalArgumentException if either condition is true. If no custom message is provided, a default message is used.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireInstanceOf(Object entry, System.Type type)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity and type</div>
+                  <div class="param-name">type</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">System.Type</code>
+                  </div>
+                  <div class="param-description">the type to check the object against</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided object is null or not an instance of the specified type
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireInstanceOf_1">
+                    <span>requireInstanceOf(entry, type, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided object is null or not an instance of the specified type and throws an IllegalArgumentException if either condition is true.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireInstanceOf( Object entry, System.Type type, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity and type</div>
+                  <div class="param-name">type</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   System.Type</code>
+                  </div>
+                  <div class="param-description">the type to check the object against</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the object is null or not an instance of the specified type</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided object is null or not an instance of the specified type
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireNonEmptyCollection">
+                    <span>requireNonEmptyCollection(entry)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided collection is null or empty and throws an IllegalArgumentException if it is. If no custom message is provided, a default message is used.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireNonEmptyCollection(List&lt;Object&gt; entry)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">List&lt;Object&gt;</code>
+                  </div>
+                  <div class="param-description">the collection to check for nullity or emptiness</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided collection is null or empty
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireNonEmptyCollection_1">
+                    <span>requireNonEmptyCollection(entry, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided collection is null or empty and throws an IllegalArgumentException if it is.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireNonEmptyCollection( List&lt;Object&gt; entry, String message )
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">entry</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">    List&lt;Object&gt;</code>
+                  </div>
+                  <div class="param-description">the collection to check for nullity or emptiness</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">   String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the collection is null or empty</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided collection is null or empty
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireNonNull">
+                    <span>requireNonNull(obj)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided object is null and throws an IllegalArgumentException if it is.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireNonNull(Object obj)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided object is null
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="Objects.requireNonNull_1">
+                    <span>requireNonNull(obj, message)</span>
+                  </h4>
+                  <div class="method-description">
+                    Checks if the provided object is null and throws an IllegalArgumentException if it is.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public static void requireNonNull(Object obj, String message)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">obj</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Object</code>
+                  </div>
+                  <div class="param-description">the object to check for nullity</div>
+                  <div class="param-name">message</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">the message to use for the exception if the object is null. If this is null, a default message is used.</div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    IllegalArgumentException if the provided object is null
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vs-code" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>
