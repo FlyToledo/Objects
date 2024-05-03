@@ -25,5 +25,5 @@ public void processAccounts(List<Account> accounts){
 }
 ``` 
 
-Documentation <a href=/documentation/index.html>here</a>
+Documentation <a href="https://flytoledo.github.io/Objects/Objects.html">here</a>
 
